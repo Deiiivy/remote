@@ -14,6 +14,11 @@ function connection() {
   return mysqli_connect($host, $user, $password, $database, $port);
 }
 
+// MATRICULAS
+/* mysqli_query(connection(), "
+  CREATE TABLE IF NOT EX
+"); */
+
 // CREATE ADMIN TABLE
 mysqli_query(connection(), "
   CREATE TABLE IF NOT EXISTS admin(
