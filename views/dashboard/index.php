@@ -45,8 +45,8 @@ $user = mysqli_fetch_array(mysqli_query(connection(), "
       </button>
     </div>
     <section class="hidden mb-2 border-2 border-gray-500 p-3" id="grades">
-      <a href="" id="btn-choose" class="mr-4 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
-        Grado preecolar
+      <a href="./form_preescolar.php" id="btn-choose" class="mr-4 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
+        Grado preescolar
       </a>
 
       <a href="" id="btn-choose" class="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
