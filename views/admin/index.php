@@ -10,7 +10,7 @@ if ($_SESSION['admin_id'] == null) {
 }
 
 $users = mysqli_query(connection(), "
-  SELECT user_id, name FROM user;
+  SELECT id, name FROM users;
 ");
 ?>
 

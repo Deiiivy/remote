@@ -5,8 +5,8 @@ require_once(str_replace('/views', '/database.php', __DIR__));
 error_reporting(0);
 ini_set('display_errors', 0);
 
-if ($_SESSION['user_id']??false || $_SESSION['admin_id']??false) {
-  if ($_SESSION['user_id']??false) {
+if ($_SESSION['user_id'] || $_SESSION['admin_id']) {
+  if ($_SESSION['user_id']) {
     header('location:./dashboard');
   }
   else {
@@ -28,7 +28,7 @@ if ($_POST) {
   else {
     $passwordHashed = password_hash($password, PASSWORD_BCRYPT);
     mysqli_query(connection(), "
-      INSERT INTO user(name, email, password) VALUES ('$name', '$email', '$passwordHashed');
+      INSERT INTO users(name, email, password) VALUES ('$name', '$email', '$passwordHashed');
     ");
     mysqli_close(connection());
     header('location:./login.php');

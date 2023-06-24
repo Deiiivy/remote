@@ -5,8 +5,8 @@ require_once(str_replace('/views', '/database.php', __DIR__));
 error_reporting(0);
 ini_set('display_errors', 0);
 
-if ($_SESSION['user_id']??false || $_SESSION['admin_id']??false) {
-  if ($_SESSION['user_id']??false) {
+if ($_SESSION['user_id'] || $_SESSION['admin_id']) {
+  if ($_SESSION['user_id']) {
     header('location:./dashboard');
   }
   else {
@@ -24,17 +24,17 @@ if ($_POST) {
     SELECT * FROM admin WHERE name = '$name' AND password = '$password';
   "));
 
-  if ($query ?? false) {
-    $_SESSION['admin_id'] = $query['admin_id'];
+  if ($query) {
+    $_SESSION['admin_id'] = $query['id'];
 
     header('location:./admin');
   } else {
     $query = mysqli_fetch_array(mysqli_query(connection(), "
-    SELECT * FROM user WHERE name = '$name';
+    SELECT * FROM users WHERE name = '$name';
     "));
 
     if (password_verify($password, $query['password'])) {
-      $_SESSION['user_id'] = $query['user_id'];
+      $_SESSION['user_id'] = $query['id'];
 
       header('location:./dashboard');
     }

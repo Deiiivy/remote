@@ -12,7 +12,7 @@ if ($_SESSION['user_id'] == null) {
 $id = $_SESSION['user_id'];
 
 $user = mysqli_fetch_array(mysqli_query(connection(), "
-  SELECT user_id, name FROM user WHERE user_id = $id;
+  SELECT id, name FROM users WHERE id = $id;
 "));
 ?>
 

@@ -10,7 +10,7 @@ $admin = [
 // CREATE ADMIN TABLE
 mysqli_query(connection(), "
   CREATE TABLE IF NOT EXISTS admin(
-    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     password VARCHAR(500)
   );
@@ -18,8 +18,8 @@ mysqli_query(connection(), "
 
 // CREATE USER TABLE
 mysqli_query(connection(), "
-  CREATE TABLE IF NOT EXISTS user(
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
+  CREATE TABLE IF NOT EXISTS users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     email VARCHAR(120),
     password VARCHAR(500)
