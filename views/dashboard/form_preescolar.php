@@ -12,8 +12,11 @@ if ($_SESSION['user_id'] == null) {
 $id = $_SESSION['user_id'];
 
 $user = mysqli_fetch_array(mysqli_query(connection(), "
-  SELECT user_id, name FROM user WHERE user_id = $id;
+  SELECT id, name FROM users WHERE id = $id;
 "));
+
+require_once('./controllers/controllerFormPreescolar.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -42,43 +45,55 @@ $user = mysqli_fetch_array(mysqli_query(connection(), "
 
     <form action="#" method="post" class="border border-black">
       <!-- STUDENT INFORMATION -->
-      <?php require_once('../inputs/studentInformation.php') ?>
+      <?php
+      $values = ['Preescolar']; 
+      require_once('../inputs/studentInformation.php');
+      ?>
 
       <!-- IDENTITY DOCUMENT -->
-      <?php require_once('../inputs/identityDocument.php') ?>
+      <?php //require_once('../inputs/identityDocument.php') ?>
 
       <!-- BORN INFORMATION -->
-      <?php require_once('../inputs/bornInformation.php') ?>
+      <?php //require_once('../inputs/bornInformation.php') ?>
 
       <!-- UBICATION INFORMATION -->
-      <?php require_once('../inputs/ubicationInformation.php') ?>
+      <?php //require_once('../inputs/ubicationInformation.php') ?>
 
       <!-- ATTENDANT INFORMATION -->
-      <?php require_once('../inputs/attendantInformation.php') ?>
+      <?php //require_once('../inputs/attendantInformation.php') ?>
 
       <!-- MOTHER INFORMATION -->
       <?php
       $message = 'Informacion de la mamá';
-      require('../inputs/ancestryInformation.php');
+      //require('../inputs/ancestryInformation.php');
       ?>
 
       <!-- FATHER INFORMATION  -->
       <?php
       $message = 'Informacion del papá';
-      require('../inputs/ancestryInformation.php');
+      //require('../inputs/ancestryInformation.php');
       ?>
 
       <!-- INDIVIDUAL INFORMATION STUDENT -->
-      <?php require_once('../inputs/individualInformationStudent.php') ?>
+      <?php //require_once('../inputs/individualInformationStudent.php') ?>
 
       <!-- HOME FEATURES -->
-      <?php require_once('../inputs/homeFeatures.php') ?>
+      <?php //require_once('../inputs/homeFeatures.php') ?>
       
       <!-- SCHOOL CAREER -->
-      <?php require_once('../inputs/schoolCareer.php') ?>
+      <?php //require_once('../inputs/schoolCareer.php') ?>
 
       <!-- STRATEGY STUDENT -->
-      <?php require_once('../inputs/strategyStudent.php') ?> 
+      <?php //require_once('../inputs/strategyStudent.php') ?> 
+
+      <div class="px-5 my-4">
+        <button 
+          type="submit" 
+          class="text-white bg-sky-700 py-2 px-4 rounded hover:bg-sky-600"
+        >
+          Guardar matricula
+        </button>
+      </div>
     </form>
   </main>
 </body>

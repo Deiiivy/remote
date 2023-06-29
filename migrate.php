@@ -6,7 +6,6 @@ $admin = [
   'password' => $_ENV['ADMIN_PASSWORD']??'admin'
 ];
 
-
 // CREATE ADMIN TABLE
 mysqli_query(connection(), "
   CREATE TABLE IF NOT EXISTS admin(
@@ -36,5 +35,29 @@ if ($createdAdmin == null) {
     INSERT INTO admin(name, password) VALUES ('$admin[name]', '$admin[password]');
   ");
 }
+
+// CREATE MATRICULAS TABLE
+mysqli_query(connection(), "
+CREATE TABLE IF NOT EXISTS matriculas ( 
+  id INT AUTO_INCREMENT PRIMARY KEY, 
+  fecha_creacion TIMESTAMP, 
+  user_id INT, 
+  FOREIGN KEY (user_id) REFERENCES users(id) 
+);
+");
+
+// CREATE MATRICULAS_ESTUDIANTE TABLE
+mysqli_query(connection(), "
+  CREATE TABLE IF NOT EXISTS matricula_estudiante (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    p_apellido VARCHAR(60),
+    S_apellido VARCHAR(60),
+    p_nombre VARCHAR(60),
+    s_nombre VARCHAR(60),
+    grado VARCHAR(15),
+    matricula_id INT,
+    FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
+  );
+");
 
 echo 'migrate successful';
