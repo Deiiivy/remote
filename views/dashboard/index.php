@@ -14,6 +14,16 @@ $id = $_SESSION['user_id'];
 $user = mysqli_fetch_array(mysqli_query(connection(), "
   SELECT id, name FROM users WHERE id = $id;
 "));
+
+$matriculas = mysqli_query(connection(), "
+  SELECT m.id, m.fecha_creacion, me.p_nombre, me.s_nombre  
+  FROM users u
+  JOIN matriculas m ON u.id = m.user_id
+  JOIN matricula_estudiante me ON m.id = me.matricula_id
+  WHERE u.id = $id;
+");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +64,25 @@ $user = mysqli_fetch_array(mysqli_query(connection(), "
       </a>
     </section>
     <section class="border border-gray-500 h-96 rounded px-4 py-8 overflow-y-auto">
-
+      <?php while ($matricula = mysqli_fetch_array($matriculas)): ?>
+        <article 
+          class="border-2 border-gray-500 rounded p-2 mb-3 flex justify-between items-center"
+        >
+          <div>
+            <time 
+              class="mb-4 italic text-sm"
+              datetime=<?= $matricula['fecha_creacion'] ?>
+            >
+              <?= $matricula['fecha_creacion'] ?>
+            </time>
+            <h4 class="font-semibold"><?= "$matricula[p_nombre] $matricula[s_nombre]" ?></h4>
+          </div>
+          <a href="#">Ver matricula</a>
+        </article>
+      <?php endwhile ?>
     </section>
   </div>
 </body>
 
 </html>
+<?php mysqli_close(connection()) ?>
