@@ -51,7 +51,7 @@ require_once('./controllers/controllerFormPreescolar.php');
       ?>
 
       <!-- IDENTITY DOCUMENT -->
-      <?php //require_once('../inputs/identityDocument.php') ?>
+      <?php require_once('../inputs/identityDocument.php') ?>
 
       <!-- BORN INFORMATION -->
       <?php //require_once('../inputs/bornInformation.php') ?>

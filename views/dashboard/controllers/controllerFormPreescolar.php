@@ -38,6 +38,10 @@ if ($_POST) {
     p_nombre, 
     s_nombre, 
     grado,
+    documento,
+    documento_tipo,
+    documento_fecha_expedicion,
+    documento_lugar_expedicion,
     matricula_id
   )
   VALUES
@@ -47,6 +51,10 @@ if ($_POST) {
     '$_POST[estudiante_p_nombre]',
     '$_POST[estudiante_s_nombre]',
     '$_POST[estudiante_grado]',
+    '$_POST[documento]',
+    '$_POST[documento_tipo]',
+    '$_POST[documento_fecha_expedicion]',
+    '$_POST[documento_lugar_expedicion]',
     $matriculaId
   )
   ");

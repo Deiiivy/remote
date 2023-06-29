@@ -51,10 +51,16 @@ mysqli_query(connection(), "
   CREATE TABLE IF NOT EXISTS matricula_estudiante (
     id INT AUTO_INCREMENT PRIMARY KEY,
     p_apellido VARCHAR(60),
-    S_apellido VARCHAR(60),
+    s_apellido VARCHAR(60),
     p_nombre VARCHAR(60),
     s_nombre VARCHAR(60),
     grado VARCHAR(15),
+    documento VARCHAR(15),
+    documento_tipo VARCHAR(35),
+    documento_fecha_expedicion DATE,
+    documento_lugar_expedicion VARCHAR(50),
+
+
     matricula_id INT,
     FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
   );
