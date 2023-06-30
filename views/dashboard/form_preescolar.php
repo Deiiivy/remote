@@ -84,7 +84,7 @@ require_once('./controllers/controllerFormPreescolar.php');
       <?php require_once('../inputs/schoolCareer.php') ?>
 
       <!-- STRATEGY STUDENT -->
-      <?php //require_once('../inputs/strategyStudent.php') ?> 
+      <?php require_once('../inputs/strategyStudent.php') ?> 
 
       <div class="px-5 my-4">
         <button 

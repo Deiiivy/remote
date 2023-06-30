@@ -55,6 +55,7 @@ mysqli_query(connection(), "
     p_nombre VARCHAR(60),
     s_nombre VARCHAR(60),
     grado VARCHAR(15),
+    subsidios VARCHAR(40),
 
     documento VARCHAR(15),
     documento_tipo VARCHAR(35),

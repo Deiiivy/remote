@@ -40,6 +40,7 @@ if ($_POST) {
     p_nombre, 
     s_nombre, 
     grado,
+    subsidios,
 
     documento,
     documento_tipo,
@@ -60,6 +61,7 @@ if ($_POST) {
     '$_POST[estudiante_p_nombre]',
     '$_POST[estudiante_s_nombre]',
     '$_POST[estudiante_grado]',
+    '$_POST[subsidios]',
 
     '$_POST[documento]',
     '$_POST[documento_tipo]',
