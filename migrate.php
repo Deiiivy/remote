@@ -130,4 +130,20 @@ mysqli_query(connection(), "
   );
 ");
 
+mysqli_query(connection(), "
+  CREATE TABLE IF NOT EXISTS matricula_estudiante_individual (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vive_solo VARCHAR(3),
+    embarazo VARCHAR(3),
+    m_p_aternidad VARCHAR(3),
+    victima_discriminacion VARCHAR(3),
+    victima_agresion VARCHAR(3),
+    victima_a VARCHAR(50),
+    desea_estudiar VARCHAR(35),
+
+    matricula_id INT,
+    FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
+  );
+");
+
 echo 'migrate successful';

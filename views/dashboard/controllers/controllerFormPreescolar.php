@@ -149,6 +149,15 @@ if ($_POST) {
 
   echo "informacion del acudiente<br/>";
 
+  $_POST['m_nombres'] = strlen($_POST['m_nombre']) === 0 ? "Null" : "'$_POST[m_nombres]'";
+  $_POST['m_apellidos'] = strlen($_POST['m_apellidos']) === 0 ? "Null" : "'$_POST[m_apellidos]'";
+  $_POST['m_ultimo_grado'] = strlen($_POST['m_ultimo_grado']) === 0 ? "Null" : "'$_POST[m_ultimo_grado]'";
+  $_POST['m_ocupacion'] = strlen($_POST['m_ocupacion']) === 0 ? "Null" : "'$_POST[m_ocupacion]'";
+  $_POST['m_documento'] = strlen($_POST['m_documento']) === 0 ? "Null" : "'$_POST[m_documento]'";
+  $_POST['m_documento_tipo'] = strlen($_POST['m_documento_tipo']) === 0 ? "Null" : "'$_POST[m_documento_tipo]'";
+  $_POST['m_documento_fecha_expedicion'] = strlen($_POST['m_documento_fecha_expedicion']) === 0 ? "Null" : "'$_POST[m_documento_fecha_expedicion]'";
+  $_POST['m_documento_lugar_expedicion'] = strlen($_POST['m_documento_lugar_expedicion']) === 0 ? "Null" : "'$_POST[m_documento_lugar_expedicion]'";
+
   // crear información de mamá
   mysqli_query(connection(),"
     INSERT INTO matricula_ancestro
@@ -169,20 +178,29 @@ if ($_POST) {
     VALUES 
     (
       'mamá',
-      '$_POST[m_nombres]',
-      '$_POST[m_apellidos]',
-      '$_POST[m_ultimo_grado]',
-      '$_POST[m_ocupacion]',
+      $_POST[m_nombres],
+      $_POST[m_apellidos],
+      $_POST[m_ultimo_grado],
+      $_POST[m_ocupacion],
 
-      '$_POST[m_documento]',
-      '$_POST[m_documento_tipo]',
-      '$_POST[m_documento_fecha_expedicion]',
-      '$_POST[m_documento_lugar_expedicion]',
+      $_POST[m_documento],
+      $_POST[m_documento_tipo],
+      $_POST[m_documento_fecha_expedicion],
+      $_POST[m_documento_lugar_expedicion],
 
       $matriculaId
     );
   ");
   echo 'Información mamá<br/>';
+
+  $_POST['p_nombres'] = strlen($_POST['p_nombre']) === 0 ? "Null" : "'$_POST[p_nombres]'";
+  $_POST['p_apellidos'] = strlen($_POST['p_apellidos']) === 0 ? "Null" : "'$_POST[p_apellidos]'";
+  $_POST['p_ultimo_grado'] = strlen($_POST['p_ultimo_grado']) === 0 ? "Null" : "'$_POST[p_ultimo_grado]'";
+  $_POST['p_ocupacion'] = strlen($_POST['p_ocupacion']) === 0 ? "Null" : "'$_POST[p_ocupacion]'";
+  $_POST['p_documento'] = strlen($_POST['p_documento']) === 0 ? "Null" : "'$_POST[p_documento]'";
+  $_POST['p_documento_tipo'] = strlen($_POST['p_documento_tipo']) === 0 ? "Null" : "'$_POST[p_documento_tipo]'";
+  $_POST['p_documento_fecha_expedicion'] = strlen($_POST['p_documento_fecha_expedicion']) === 0 ? "Null" : "'$_POST[p_documento_fecha_expedicion]'";
+  $_POST['p_documento_lugar_expedicion'] = strlen($_POST['p_documento_lugar_expedicion']) === 0 ? "Null" : "'$_POST[p_documento_lugar_expedicion]'";
 
   // crear información de papá
   mysqli_query(connection(),"
@@ -204,18 +222,45 @@ if ($_POST) {
     VALUES 
     (
       'papá',
-      '$_POST[p_nombres]',
-      '$_POST[p_apellidos]',
-      '$_POST[p_ultimo_grado]',
-      '$_POST[p_ocupacion]',
+      $_POST[p_nombres],
+      $_POST[p_apellidos],
+      $_POST[p_ultimo_grado],
+      $_POST[p_ocupacion],
 
-      '$_POST[p_documento]',
-      '$_POST[p_documento_tipo]',
-      '$_POST[p_documento_fecha_expedicion]',
-      '$_POST[p_documento_lugar_expedicion]',
+      $_POST[p_documento],
+      $_POST[p_documento_tipo],
+      $_POST[p_documento_fecha_expedicion],
+      $_POST[p_documento_lugar_expedicion],
 
       $matriculaId
     );
   ");
   echo 'Información papá<br/>';
+
+  // crear información individual del estudiante
+  mysqli_query(connection(), "
+    INSERT INTO matricula_estudiante_individual
+    (
+      vive_solo,
+      embarazo,
+      m_p_aternidad,
+      victima_discriminacion,
+      victima_agresion,
+      victima_a,
+      desea_estudiar,
+      matricula_id
+    )
+    VALUES
+    (
+      '$_POST[vive_solo]',
+      '$_POST[embarazo]',
+      '$_POST[m_p_aternidad]',
+      '$_POST[victima_discriminacion]',
+      '$_POST[victima_agresion]',
+      '$_POST[victima_de]',
+      '$_POST[desea_estudiar]',
+      $matriculaId
+    );
+  ");
+  echo "información indivual estudiante";
 }
