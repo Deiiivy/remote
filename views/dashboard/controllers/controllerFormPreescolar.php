@@ -72,4 +72,34 @@ if ($_POST) {
     $matriculaId
   )
   ");
+
+  // crear información de ubicación
+  mysqli_query(connection(), "
+    INSERT INTO matricula_ubicacion
+    (
+      direccion,
+      telefono,
+      correo,
+      numero_telefonico,
+      estrato,
+      sisben,
+      eps,
+      tipo_sangre,
+      victima,
+      matricula_id
+    )
+    VALUES 
+    (
+      '$_POST[direccion]',
+      '$_POST[telefono]',
+      '$_POST[correo]',
+      '$_POST[numero_telefonico]',
+      '$_POST[estrato]',
+      '$_POST[sisben]',
+      '$_POST[eps]',
+      '$_POST[tipo_sangre]',
+      '$_POST[victima]',
+      $matriculaId
+    )
+  ");
 }
