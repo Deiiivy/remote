@@ -59,7 +59,10 @@ mysqli_query(connection(), "
     documento_tipo VARCHAR(35),
     documento_fecha_expedicion DATE,
     documento_lugar_expedicion VARCHAR(50),
-
+    nacimiento_lugar VARCHAR(70),
+    nacimiento_municipio VARCHAR(70),
+    nacimiento_departamento VARCHAR(50),
+    nacimiento_pais VARCHAR(20),
 
     matricula_id INT,
     FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
