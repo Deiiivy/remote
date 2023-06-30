@@ -17,7 +17,7 @@
     </select>
 
     <input name="a_documento" class="mb-3 border border-black" type="text" placeholder="numero de documento" required>
-    <label>Fecha de expedicon del documento</label>
+    <label>Fecha de expedición del documento</label>
     <input name="a_documento_fecha_expedicion" class="mb-3 border border-black " type="date">
     <input name="a_documento_lugar_expedicion" class="mb-3 border border-black" type="text" placeholder="lugar de expedición del documento" required>
     <input name="a_ocupacion" class="mb-3 border border-black" placeholder="ocupacion" type="text" required>

@@ -34,9 +34,13 @@ $matriculas = mysqli_query(connection(), "
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel administrativo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../../js/grades.js" defer></script>
   <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon">
+  <script src="../../js/grades.js" defer></script>
+  <?php if ($_GET['message']): ?>
+    <script src="../../js/message.js" defer></script>    
+  <?php endif ?>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -46,7 +50,13 @@ $matriculas = mysqli_query(connection(), "
       <a class="text-white border border-white px-4 py-2 rounded" href="../logout.php">Cerrar sesión</a>
     </div>
   </header>
-  <div class="w-11/12 mx-auto mt-12">
+  <div class="w-11/12 mx-auto mt-12 relative">
+
+    <?php if ($_GET['message']): ?>
+      <span class="text-white bg-sky-500 p-1 rounded absolute -top-12">
+        <?= $_GET['message'] ?>
+      </span>
+    <?php endif ?>
 
     <h1 class="text-4xl font-bold text-center">Mis matriculas</h1>
     <div class="mb-2 mt-8">
@@ -55,11 +65,11 @@ $matriculas = mysqli_query(connection(), "
       </button>
     </div>
     <section class="hidden mb-2 border-2 border-gray-500 p-3" id="grades">
-      <a href="./form_preescolar.php" id="btn-choose" class="mr-4 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
+      <a href="./form.php" id="btn-choose" class="mr-4 px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
         Grado preescolar
       </a>
 
-      <a href="" id="btn-choose" class="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
+      <a href="./form.php?grado=primero_once" id="btn-choose" class="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
         Grado primero a once
       </a>
     </section>

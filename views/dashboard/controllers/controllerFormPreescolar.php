@@ -19,17 +19,11 @@ if ($_POST) {
 
   $matriculaId = mysqli_fetch_array($query)['id'];
 
-  // $matriculas = mysqli_fetch_array($query);
-
-  // var_dump($matriculas);
-  /* while ($row = mysqli_fetch_array($query)) {
-    var_dump($row);
-  }  */
-  foreach ($_POST as $key => $value) {
+  /* foreach ($_POST as $key => $value) {
     echo "Clave: $key, Valor: $value <br/>";
-  }
+  } */
 
-  echo "Matricula creada<br/>";
+  // echo "Matricula creada<br/>";
 
   // crear iformacion del estudiante
   mysqli_query(connection(), "
@@ -77,7 +71,7 @@ if ($_POST) {
   )
   ");
 
-  echo "informacion del estudiante<br/>";
+  // echo "informacion del estudiante<br/>";
 
   // crear información de ubicación
   mysqli_query(connection(), "
@@ -109,7 +103,7 @@ if ($_POST) {
     )
   ");
 
-  echo "informacion del ubicación<br/>";
+  // echo "informacion del ubicación<br/>";
 
   // crear información del acudiente
   mysqli_query(connection(),"
@@ -149,14 +143,14 @@ if ($_POST) {
     )
   ");
 
-  echo "informacion del acudiente<br/>";
+  // echo "informacion del acudiente<br/>";
 
-  $_POST['m_nombres'] = strlen($_POST['m_nombre']) === 0 ? "Null" : "'$_POST[m_nombres]'";
+  $_POST['m_nombres'] = strlen($_POST['m_nombres']) === 0 ? "Null" : "'$_POST[m_nombres]'";
   $_POST['m_apellidos'] = strlen($_POST['m_apellidos']) === 0 ? "Null" : "'$_POST[m_apellidos]'";
-  $_POST['m_ultimo_grado'] = strlen($_POST['m_ultimo_grado']) === 0 ? "Null" : "'$_POST[m_ultimo_grado]'";
+  $_POST['m_ultimo_grado'] = $_POST['m_nombres'] === "Null" ? "Null" : "'$_POST[m_ultimo_grado]'";
   $_POST['m_ocupacion'] = strlen($_POST['m_ocupacion']) === 0 ? "Null" : "'$_POST[m_ocupacion]'";
   $_POST['m_documento'] = strlen($_POST['m_documento']) === 0 ? "Null" : "'$_POST[m_documento]'";
-  $_POST['m_documento_tipo'] = strlen($_POST['m_documento_tipo']) === 0 ? "Null" : "'$_POST[m_documento_tipo]'";
+  $_POST['m_documento_tipo'] = $_POST['m_nombres'] === "Null" ? "Null" : "'$_POST[m_documento_tipo]'";
   $_POST['m_documento_fecha_expedicion'] = strlen($_POST['m_documento_fecha_expedicion']) === 0 ? "Null" : "'$_POST[m_documento_fecha_expedicion]'";
   $_POST['m_documento_lugar_expedicion'] = strlen($_POST['m_documento_lugar_expedicion']) === 0 ? "Null" : "'$_POST[m_documento_lugar_expedicion]'";
 
@@ -193,14 +187,14 @@ if ($_POST) {
       $matriculaId
     );
   ");
-  echo 'Información mamá<br/>';
+  // echo 'Información mamá<br/>';
 
-  $_POST['p_nombres'] = strlen($_POST['p_nombre']) === 0 ? "Null" : "'$_POST[p_nombres]'";
+  $_POST['p_nombres'] = strlen($_POST['p_nombres']) === 0 ? "Null" : "'$_POST[p_nombres]'";
   $_POST['p_apellidos'] = strlen($_POST['p_apellidos']) === 0 ? "Null" : "'$_POST[p_apellidos]'";
-  $_POST['p_ultimo_grado'] = strlen($_POST['p_ultimo_grado']) === 0 ? "Null" : "'$_POST[p_ultimo_grado]'";
+  $_POST['p_ultimo_grado'] = $_POST['p_nombres'] === "Null" ? "Null" : "'$_POST[p_ultimo_grado]'";
   $_POST['p_ocupacion'] = strlen($_POST['p_ocupacion']) === 0 ? "Null" : "'$_POST[p_ocupacion]'";
   $_POST['p_documento'] = strlen($_POST['p_documento']) === 0 ? "Null" : "'$_POST[p_documento]'";
-  $_POST['p_documento_tipo'] = strlen($_POST['p_documento_tipo']) === 0 ? "Null" : "'$_POST[p_documento_tipo]'";
+  $_POST['p_documento_tipo'] = $_POST['p_nombres'] === "Null" ? "Null" : "'$_POST[p_documento_tipo]'";
   $_POST['p_documento_fecha_expedicion'] = strlen($_POST['p_documento_fecha_expedicion']) === 0 ? "Null" : "'$_POST[p_documento_fecha_expedicion]'";
   $_POST['p_documento_lugar_expedicion'] = strlen($_POST['p_documento_lugar_expedicion']) === 0 ? "Null" : "'$_POST[p_documento_lugar_expedicion]'";
 
@@ -237,7 +231,7 @@ if ($_POST) {
       $matriculaId
     );
   ");
-  echo 'Información papá<br/>';
+  // echo 'Información papá<br/>';
 
   // crear información individual del estudiante
   mysqli_query(connection(), "
@@ -264,7 +258,7 @@ if ($_POST) {
       $matriculaId
     );
   ");
-  echo "información indivual estudiante<br/>";
+  // echo "información indivual estudiante<br/>";
 
   // crear información de vivienda
   mysqli_query(connection(), "
@@ -284,7 +278,7 @@ if ($_POST) {
     );
   ");
 
-  echo "información vivienda<br/>";
+  // echo "información vivienda<br/>";
 
   // crear informacion carrera escolar
   mysqli_query(connection(), "
@@ -326,5 +320,7 @@ if ($_POST) {
     );
   ");
 
-  echo "Información carrera escolar";
+  // echo "Información carrera escolar";
+
+  header('location:./?message='. urldecode('Matricula creada correctamente'));
 }
