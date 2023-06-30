@@ -65,13 +65,13 @@ require_once('./controllers/controllerFormPreescolar.php');
       <!-- MOTHER INFORMATION -->
       <?php
       $message = 'Informacion de la mamá';
-      //require('../inputs/ancestryInformation.php');
+      require('../inputs/ancestryInformation.php');
       ?>
 
       <!-- FATHER INFORMATION  -->
       <?php
       $message = 'Informacion del papá';
-      //require('../inputs/ancestryInformation.php');
+      require('../inputs/ancestryInformation.php');
       ?>
 
       <!-- INDIVIDUAL INFORMATION STUDENT -->

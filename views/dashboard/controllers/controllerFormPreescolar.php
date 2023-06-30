@@ -149,4 +149,73 @@ if ($_POST) {
 
   echo "informacion del acudiente<br/>";
 
+  // crear información de mamá
+  mysqli_query(connection(),"
+    INSERT INTO matricula_ancestro
+    (
+      ancestro,
+      nombres,
+      apellidos,
+      ultimo_grado,
+      ocupacion,
+
+      documento,
+      documento_tipo,
+      documento_fecha_expedicion,
+      documento_lugar_expedicion,
+
+      matricula_id
+    )
+    VALUES 
+    (
+      'mamá',
+      '$_POST[m_nombres]',
+      '$_POST[m_apellidos]',
+      '$_POST[m_ultimo_grado]',
+      '$_POST[m_ocupacion]',
+
+      '$_POST[m_documento]',
+      '$_POST[m_documento_tipo]',
+      '$_POST[m_documento_fecha_expedicion]',
+      '$_POST[m_documento_lugar_expedicion]',
+
+      $matriculaId
+    );
+  ");
+  echo 'Información mamá<br/>';
+
+  // crear información de papá
+  mysqli_query(connection(),"
+    INSERT INTO matricula_ancestro
+    (
+      ancestro,
+      nombres,
+      apellidos,
+      ultimo_grado,
+      ocupacion,
+
+      documento,
+      documento_tipo,
+      documento_fecha_expedicion,
+      documento_lugar_expedicion,
+
+      matricula_id
+    )
+    VALUES 
+    (
+      'papá',
+      '$_POST[p_nombres]',
+      '$_POST[p_apellidos]',
+      '$_POST[p_ultimo_grado]',
+      '$_POST[p_ocupacion]',
+
+      '$_POST[p_documento]',
+      '$_POST[p_documento_tipo]',
+      '$_POST[p_documento_fecha_expedicion]',
+      '$_POST[p_documento_lugar_expedicion]',
+
+      $matriculaId
+    );
+  ");
+  echo 'Información papá<br/>';
 }

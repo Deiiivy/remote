@@ -111,4 +111,23 @@ mysqli_query(connection(), "
   );
 ");
 
+mysqli_query(connection(), "
+  CREATE TABLE IF NOT EXISTS matricula_ancestro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ancestro VARCHAR(10),
+    nombres VARCHAR(60),
+    apellidos VARCHAR(60),
+    ultimo_grado VARCHAR(30),
+    ocupacion VARCHAR(50),
+
+    documento VARCHAR(15),
+    documento_tipo VARCHAR(35),
+    documento_fecha_expedicion DATE,
+    documento_lugar_expedicion VARCHAR(50),
+
+    matricula_id INT,
+    FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
+  );
+");
+
 echo 'migrate successful';
