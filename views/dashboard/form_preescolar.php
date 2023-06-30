@@ -60,7 +60,7 @@ require_once('./controllers/controllerFormPreescolar.php');
       <?php require_once('../inputs/ubicationInformation.php') ?>
 
       <!-- ATTENDANT INFORMATION -->
-      <?php //require_once('../inputs/attendantInformation.php') ?>
+      <?php require_once('../inputs/attendantInformation.php') ?>
 
       <!-- MOTHER INFORMATION -->
       <?php

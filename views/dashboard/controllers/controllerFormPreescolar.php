@@ -29,6 +29,8 @@ if ($_POST) {
     echo "Clave: $key, Valor: $value <br/>";
   }
 
+  echo "Matricula creada<br/>";
+
   // crear iformacion del estudiante
   mysqli_query(connection(), "
   INSERT INTO matricula_estudiante
@@ -73,6 +75,8 @@ if ($_POST) {
   )
   ");
 
+  echo "informacion del estudiante<br/>";
+
   // crear información de ubicación
   mysqli_query(connection(), "
     INSERT INTO matricula_ubicacion
@@ -102,4 +106,47 @@ if ($_POST) {
       $matriculaId
     )
   ");
+
+  echo "informacion del ubicación<br/>";
+
+  // crear información del acudiente
+  mysqli_query(connection(),"
+    INSERT INTO matricula_acudiente 
+    (
+      p_apellido,
+      s_apellido,
+      p_nombre,
+      s_nombre,
+      ultimo_grado,
+      parentesco,
+      ocupacion,
+
+      documento,
+      documento_tipo,
+      documento_fecha_expedicion,
+      documento_lugar_expedicion,
+
+      matricula_id
+    )
+    VALUES
+    (
+      '$_POST[a_p_apellido]',
+      '$_POST[a_s_apellido]',
+      '$_POST[a_p_nombre]',
+      '$_POST[a_s_nombre]',
+      '$_POST[a_ultimo_grado]',
+      '$_POST[parentesco]',
+      '$_POST[a_ocupacion]',
+
+      '$_POST[a_documento]',
+      '$_POST[a_documento_tipo]',
+      '$_POST[a_documento_fecha_expedicion]',
+      '$_POST[a_documento_lugar_expedicion]',
+
+      $matriculaId
+    )
+  ");
+
+  echo "informacion del acudiente<br/>";
+
 }
