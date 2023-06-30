@@ -146,4 +146,16 @@ mysqli_query(connection(), "
   );
 ");
 
+mysqli_query(connection(), "
+  CREATE TABLE IF NOT EXISTS matricula_vivienda (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_vivienda VARCHAR(50),
+    vivienda VARCHAR(30),
+    personas INT,
+
+    matricula_id INT,
+    FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
+  );
+");
+
 echo 'migrate successful';

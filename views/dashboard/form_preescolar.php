@@ -78,7 +78,7 @@ require_once('./controllers/controllerFormPreescolar.php');
       <?php require_once('../inputs/individualInformationStudent.php') ?>
 
       <!-- HOME FEATURES -->
-      <?php //require_once('../inputs/homeFeatures.php') ?>
+      <?php require_once('../inputs/homeFeatures.php') ?>
       
       <!-- SCHOOL CAREER -->
       <?php //require_once('../inputs/schoolCareer.php') ?>

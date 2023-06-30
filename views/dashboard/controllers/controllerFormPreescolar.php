@@ -262,5 +262,25 @@ if ($_POST) {
       $matriculaId
     );
   ");
-  echo "información indivual estudiante";
+  echo "información indivual estudiante<br/>";
+
+  // crear información de vivienda
+  mysqli_query(connection(), "
+    INSERT INTO matricula_vivienda
+    (
+      tipo_vivienda,
+      vivienda,
+      personas,
+      matricula_id
+    )
+    VALUES
+    (
+      '$_POST[tipo_vivienda]',
+      '$_POST[vivienda]',
+      $_POST[personas],
+      $matriculaId
+    );
+  ");
+
+  echo "información vivienda<br/>";
 }
