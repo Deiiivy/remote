@@ -158,4 +158,26 @@ mysqli_query(connection(), "
   );
 ");
 
+mysqli_query(connection(), "
+  CREATE TABLE IF NOT EXISTS matricula_carrera_escolar (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    educacion_preescolar VARCHAR(50),
+    preescolar_years INT,
+    retiro_escolar VARCHAR(3),
+    tiempo_fuera  INT,
+    abandonos VARCHAR(3),
+    years_repetidos INT,
+    repitiendo_year VARCHAR(3),
+    antecedentes VARCHAR(50),
+    asistencia VARCHAR(50),
+    alteraciones VARCHAR(3),
+    modalidad_inicio VARCHAR(3),
+    asignaturas_p VARCHAR(200),
+    asignaturas_s VARCHAR(200),
+
+    matricula_id INT,
+    FOREIGN KEY (matricula_id) REFERENCES matriculas(id)
+  );
+");
+
 echo 'migrate successful';

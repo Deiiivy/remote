@@ -81,7 +81,7 @@ require_once('./controllers/controllerFormPreescolar.php');
       <?php require_once('../inputs/homeFeatures.php') ?>
       
       <!-- SCHOOL CAREER -->
-      <?php //require_once('../inputs/schoolCareer.php') ?>
+      <?php require_once('../inputs/schoolCareer.php') ?>
 
       <!-- STRATEGY STUDENT -->
       <?php //require_once('../inputs/strategyStudent.php') ?> 

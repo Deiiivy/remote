@@ -283,4 +283,46 @@ if ($_POST) {
   ");
 
   echo "información vivienda<br/>";
+
+  // crear informacion carrera escolar
+  mysqli_query(connection(), "
+    INSERT INTO matricula_carrera_escolar
+    (
+      educacion_preescolar,
+      preescolar_years,
+      retiro_escolar,
+      tiempo_fuera,
+      abandonos,
+      years_repetidos,
+      repitiendo_year,
+      antecedentes,
+      asistencia,
+      alteraciones,
+      modalidad_inicio,
+      asignaturas_p,
+      asignaturas_s,
+
+      matricula_id
+    )
+    VALUES
+    (
+      '$_POST[educacion_preescolar]',
+      $_POST[preescolar_years],
+      '$_POST[retiro_escolar]',
+      $_POST[tiempo_fuera],
+      '$_POST[abandonos]',
+      $_POST[years_repetidos],
+      '$_POST[repitiendo_year]',
+      '$_POST[antecedentes]',
+      '$_POST[asistencia]',
+      '$_POST[alteraciones]',
+      '$_POST[modalidad_inicio]',
+      '$_POST[asignaturas_p]',
+      '$_POST[asignaturas_s]',
+
+      $matriculaId
+    );
+  ");
+
+  echo "Información carrera escolar";
 }
