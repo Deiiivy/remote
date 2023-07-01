@@ -32,7 +32,7 @@
     </select>
 
     <label class="mb-3">Antecedentes disciplinarios de la vida academica</label>
-    <select name="antecendentes" class="border border-black mb-3">
+    <select name="antecedentes" class="border border-black mb-3">
       <option value="llamados de atencion">Llamados de atencion</option>
       <option value="suspenciones">Suspenciones</option>
       <option value="llamados de atencion y suspenciones">Llamados de atencion y suspenciones</option>
