@@ -22,8 +22,6 @@ $matriculas = mysqli_query(connection(), "
   JOIN matricula_estudiante me ON m.id = me.matricula_id
   WHERE u.id = $id;
 ");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +32,6 @@ $matriculas = mysqli_query(connection(), "
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel administrativo</title>
-  <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon">
   <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon">
   <script src="../../js/grades.js" defer></script>
   <?php if ($_GET['message']): ?>
@@ -87,7 +84,12 @@ $matriculas = mysqli_query(connection(), "
             </time>
             <h4 class="font-semibold"><?= "$matricula[p_nombre] $matricula[s_nombre]" ?></h4>
           </div>
-          <a href="#">Ver matricula</a>
+          <a 
+            href=<?= "./matricula.php?matricula_id=$matricula[id]" ?> 
+            class="text-white bg-sky-500 px-4 py-2 rounded hover:bg-sky-600"
+          >
+            Ver matricula
+          </a>
         </article>
       <?php endwhile ?>
     </section>
