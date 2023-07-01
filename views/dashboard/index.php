@@ -34,9 +34,6 @@ $matriculas = mysqli_query(connection(), "
   <title>Panel administrativo</title>
   <link rel="shortcut icon" href="../../assets/logo.png" type="image/x-icon">
   <script src="../../js/grades.js" defer></script>
-  <?php if ($_GET['message']): ?>
-    <script src="../../js/message.js" defer></script>    
-  <?php endif ?>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -48,13 +45,6 @@ $matriculas = mysqli_query(connection(), "
     </div>
   </header>
   <div class="w-11/12 mx-auto mt-12 relative">
-
-    <?php if ($_GET['message']): ?>
-      <span class="text-white bg-sky-500 p-1 rounded absolute -top-12">
-        <?= $_GET['message'] ?>
-      </span>
-    <?php endif ?>
-
     <h1 class="text-4xl font-bold text-center">Mis matriculas</h1>
     <div class="mb-2 mt-8">
       <button id="btn-choose-grade" class="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600">
