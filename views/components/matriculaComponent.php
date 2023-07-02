@@ -3,7 +3,7 @@
   <div class="border border-black w-4/5 mx-auto mb-6">
     <!-- Mostrar información de la matricula -->
     <?php
-    $matriculaInfo = mysqli_fetch_row( mysqli_query(connection(), "
+    $matriculaInfo = mysqli_fetch_row(mysqli_query(connection(), "
     SELECT fecha_creacion FROM matriculas WHERE id = $matriculaId; 
     "));
     ?>
@@ -15,15 +15,15 @@
         <h3 class="mb-1 font-medium text-sky-700">Creado por: </h3>
         <address class="italic">
           <p>
-            <span class="font-medium">Ususario:</span> 
+            <span class="font-medium">Ususario:</span>
             <?= $user['name'] ?>
           </p>
           <p>
-            <span class="font-medium">Correo electronico:</span> 
+            <span class="font-medium">Correo electronico:</span>
             <?= $user['email'] ?>
           </p>
           <p>
-            <span class="font-medium">Fecha de creación:</span> 
+            <span class="font-medium">Fecha de creación:</span>
             <?= $matriculaInfo[0] ?>
           </p>
         </address>
@@ -32,7 +32,7 @@
 
     <!-- Información del estudiante -->
     <section class="mb-4">
-      <?php 
+      <?php
       $estudianteInfo = mysqli_fetch_array(mysqli_query(connection(), "
         SELECT e.*  
         FROM matricula_estudiante e
@@ -48,28 +48,28 @@
         <h3 class="mb-1 font-medium text-sky-700">Información personal: </h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Primer Apellido:</span> 
+            <span class="font-medium">Primer Apellido:</span>
             <?= $estudianteInfo['p_apellido'] ?>
           </p>
           <p>
-            <span class="font-medium">Segundo Apellido:</span> 
+            <span class="font-medium">Segundo Apellido:</span>
             <?= $estudianteInfo['s_apellido'] ?>
           </p>
           <p>
-            <span class="font-medium">Primer nombre:</span> 
+            <span class="font-medium">Primer nombre:</span>
             <?= $estudianteInfo['p_nombre'] ?>
           </p>
           <p>
-            <span class="font-medium">Segundo nombre:</span> 
+            <span class="font-medium">Segundo nombre:</span>
             <?= $estudianteInfo['s_nombre'] ?>
           </p>
 
           <p>
-            <span class="font-medium">Grado a cursar:</span> 
+            <span class="font-medium">Grado a cursar:</span>
             <?= $estudianteInfo['grado'] ?>
           </p>
           <p>
-            <span class="font-medium">Subsidios:</span> 
+            <span class="font-medium">Subsidios:</span>
             <?= $estudianteInfo['subsidios'] ?>
           </p>
         </div>
@@ -77,19 +77,19 @@
         <h3 class="mb-1 font-medium text-sky-700">Información de documento: </h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Número de documento:</span> 
+            <span class="font-medium">Número de documento:</span>
             <?= $estudianteInfo['documento'] ?>
           </p>
           <p>
-            <span class="font-medium">Tipo de documento:</span> 
+            <span class="font-medium">Tipo de documento:</span>
             <?= $estudianteInfo['documento_tipo'] ?>
           </p>
           <p>
-            <span class="font-medium">Fecha de expedición:</span> 
+            <span class="font-medium">Fecha de expedición:</span>
             <?= $estudianteInfo['documento_fecha_expedicion'] ?>
           </p>
           <p>
-            <span class="font-medium">Lugar de expedición:</span> 
+            <span class="font-medium">Lugar de expedición:</span>
             <?= $estudianteInfo['documento_lugar_expedicion'] ?>
           </p>
         </div>
@@ -97,24 +97,24 @@
         <h3 class="mb-1 font-medium text-sky-700">Información de nacimiento:</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Lugar de nacimiento:</span> 
+            <span class="font-medium">Lugar de nacimiento:</span>
             <?= $estudianteInfo['nacimiento_lugar'] ?>
           </p>
           <p>
-            <span class="font-medium">Municipio de nacimiento:</span> 
+            <span class="font-medium">Municipio de nacimiento:</span>
             <?= $estudianteInfo['nacimiento_municipio'] ?>
           </p>
           <p>
-            <span class="font-medium">Departamento de nacimiento:</span> 
+            <span class="font-medium">Departamento de nacimiento:</span>
             <?= $estudianteInfo['nacimiento_departamento'] ?>
           </p>
           <p>
-            <span class="font-medium">País de nacimiento:</span> 
+            <span class="font-medium">País de nacimiento:</span>
             <?= $estudianteInfo['nacimiento_pais'] ?>
           </p>
         </div>
 
-        <?php 
+        <?php
         $estudianteInfo = mysqli_fetch_array(mysqli_query(connection(), "
           SELECT i.*  
           FROM matricula_estudiante_individual i
@@ -126,31 +126,31 @@
         <h3 class="mb-1 font-medium text-sky-700">Información individual: </h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">El estudiante vive solo:</span> 
+            <span class="font-medium">El estudiante vive solo:</span>
             <?= $estudianteInfo['vive_solo'] ?>
           </p>
           <p>
-            <span class="font-medium">Embarazo:</span> 
+            <span class="font-medium">Embarazo:</span>
             <?= $estudianteInfo['embarazo'] ?>
           </p>
           <p>
-            <span class="font-medium">Maternidad o paternidad temprana:</span> 
+            <span class="font-medium">Maternidad o paternidad temprana:</span>
             <?= $estudianteInfo['m_p_aternidad'] ?>
           </p>
           <p>
-            <span class="font-medium">El estudiante es victima de discriminación:</span> 
+            <span class="font-medium">El estudiante es victima de discriminación:</span>
             <?= $estudianteInfo['victima_discriminacion'] ?>
           </p>
           <p>
-            <span class="font-medium">El estudiante es victima de discriminación a razón de:</span> 
+            <span class="font-medium">El estudiante es victima de discriminación a razón de:</span>
             <?= $estudianteInfo['victima_a'] ?>
           </p>
           <p>
-            <span class="font-medium">El estudiante es victima de agresión:</span> 
+            <span class="font-medium">El estudiante es victima de agresión:</span>
             <?= $estudianteInfo['victima_agresion'] ?>
           </p>
           <p>
-            <span class="font-medium">El estudiante desea estudiar:</span> 
+            <span class="font-medium">El estudiante desea estudiar:</span>
             <?= $estudianteInfo['desea_estudiar'] ?>
           </p>
         </div>
@@ -158,7 +158,7 @@
     </section>
 
     <!-- Carrera trayectoria de estudiante -->
-    <?php 
+    <?php
     $estudianteInfo = mysqli_fetch_array(mysqli_query(connection(), "
       SELECT t.*  
       FROM matricula_carrera_escolar t
@@ -172,11 +172,11 @@
         <h3 class="mb-1 font-medium text-sky-700">Educación preescolar:</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Tuvo educación preescolar:</span> 
+            <span class="font-medium">Tuvo educación preescolar:</span>
             <?= $estudianteInfo['educaion_preescolar'] ?>
           </p>
           <p>
-            <span class="font-medium">Años de educación preescolar:</span> 
+            <span class="font-medium">Años de educación preescolar:</span>
             <?= $estudianteInfo['preescolar_years'] ?>
           </p>
         </div>
@@ -184,38 +184,38 @@
         <h3 class="mb-1 font-medium text-sky-700">Información de los años cursados por el estudiante</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Alguna vez se ha retirado del establecimiento educativo, sin terminar el año escolar:</span> 
+            <span class="font-medium">Alguna vez se ha retirado del establecimiento educativo, sin terminar el año escolar:</span>
             <?= $estudianteInfo['retiro_escolar'] ?>
           </p>
           <p>
-            <span class="font-medium">Tiempo en meses, que estuvo por fuera del sistema educativo:</span> 
-            <?= $estudianteInfo['tiempo_fuera']. ' mes/meses' ?>
+            <span class="font-medium">Tiempo en meses, que estuvo por fuera del sistema educativo:</span>
+            <?= $estudianteInfo['tiempo_fuera'] . ' mes/meses' ?>
           </p>
           <p>
-            <span class="font-medium">Abandonos temporales (año electivo actual):</span> 
+            <span class="font-medium">Abandonos temporales (año electivo actual):</span>
             <?= $estudianteInfo['abandonos'] ?>
           </p>
           <p>
-            <span class="font-medium">Número de años repetidos:</span> 
+            <span class="font-medium">Número de años repetidos:</span>
             <?= $estudianteInfo['years_repetidos'] ?>
           </p>
           <p>
-            <span class="font-medium">El estudiante repetite el año actual:</span> 
+            <span class="font-medium">El estudiante repetite el año actual:</span>
             <?= $estudianteInfo['repitiendo_year'] ?>
           </p>
           <p>
-            <span class="font-medium">Antecedentes disciplinarios:</span> 
+            <span class="font-medium">Antecedentes disciplinarios:</span>
             <?= $estudianteInfo['antecedentes'] ?>
           </p>
           <p>
-            <span class="font-medium">Asistencia promedio del año anterior:</span> 
+            <span class="font-medium">Asistencia promedio del año anterior:</span>
             <?= $estudianteInfo['asistencia'] ?>
           </p>
           <p>
-            <span class="font-medium">Presenta alteraciones en su desarrollo o dificultades de aprendizaje:</span> 
+            <span class="font-medium">Presenta alteraciones en su desarrollo o dificultades de aprendizaje:</span>
             <?= $estudianteInfo['alteraciones'] ?>
           <p>
-            <span class="font-medium">Vinculación a una modalidad de educacion inical antes de ingresar a preescolar:</span> 
+            <span class="font-medium">Vinculación a una modalidad de educacion inical antes de ingresar a preescolar:</span>
             <?= $estudianteInfo['modalidad_inicio'] ?>
           </p>
         </div>
@@ -223,11 +223,11 @@
         <h3 class="mb-1 font-medium text-sky-700">Asignaturas reprobadas</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">primer periodo:</span> 
+            <span class="font-medium">primer periodo:</span>
             <?= $estudianteInfo['asignaturas_p'] ?>
           </p>
           <p>
-            <span class="font-medium">segundo periodo:</span> 
+            <span class="font-medium">segundo periodo:</span>
             <?= $estudianteInfo['asignaturas_s'] ?>
           </p>
         </div>
@@ -235,7 +235,7 @@
     </section>
 
     <!-- Información del acudiente -->
-    <?php 
+    <?php
     $acudienteInfo = mysqli_fetch_array(mysqli_query(connection(), "
       SELECT a.*  
       FROM matricula_acudiente a
@@ -250,52 +250,197 @@
         <h3 class="mb-1 font-medium text-sky-700">Información personal:</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Primer Apellido:</span> 
+            <span class="font-medium">Primer Apellido:</span>
             <?= $acudienteInfo['p_apellido'] ?>
           </p>
           <p>
-            <span class="font-medium">Segundo Apellido:</span> 
+            <span class="font-medium">Segundo Apellido:</span>
             <?= $acudienteInfo['s_apellido'] ?>
           </p>
           <p>
-            <span class="font-medium">Primer nombre:</span> 
+            <span class="font-medium">Primer nombre:</span>
             <?= $acudienteInfo['p_nombre'] ?>
           </p>
           <p>
-            <span class="font-medium">Segundo nombre:</span> 
+            <span class="font-medium">Segundo nombre:</span>
             <?= $acudienteInfo['s_nombre'] ?>
           </p>
           <p>
-            <span class="font-medium">Ultimo grado a cursado:</span> 
+            <span class="font-medium">Ultimo grado a cursado:</span>
             <?= $acudienteInfo['ultimo_grado'] ?>
           </p>
           <p>
-            <span class="font-medium">Parentesco:</span> 
+            <span class="font-medium">Parentesco:</span>
             <?= $acudienteInfo['parentesco'] ?>
           </p>
           <p>
-            <span class="font-medium">Ocupación:</span> 
+            <span class="font-medium">Ocupación:</span>
             <?= $acudienteInfo['ocupacion'] ?>
-          </p> 
+          </p>
         </div>
 
         <h3 class="mb-1 font-medium text-sky-700">Información de documento:</h3>
         <div class="mb-3 italic">
           <p>
-            <span class="font-medium">Número de documento:</span> 
+            <span class="font-medium">Número de documento:</span>
             <?= $acudienteInfo['documento'] ?>
           </p>
           <p>
-            <span class="font-medium">Tipo de documento:</span> 
+            <span class="font-medium">Tipo de documento:</span>
             <?= $acudienteInfo['documento_tipo'] ?>
           </p>
           <p>
-            <span class="font-medium">Fecha de expedición:</span> 
+            <span class="font-medium">Fecha de expedición:</span>
             <?= $acudienteInfo['documento_fecha_expedicion'] ?>
           </p>
           <p>
-            <span class="font-medium">Lugar de expedición:</span> 
+            <span class="font-medium">Lugar de expedición:</span>
             <?= $acudienteInfo['documento_lugar_expedicion'] ?>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información de ancestros papá/mamá -->
+    <?php
+    $ancestrosInfo = mysqli_query(connection(), "
+      SELECT an.*  
+      FROM matricula_ancestro an
+      JOIN matriculas m ON m.id = an.matricula_id
+      WHERE m.id = $matriculaId;
+    ");
+    ?>
+
+    <?php while ($ancestro = mysqli_fetch_array($ancestrosInfo)) : ?>
+
+      <section class="mb-4">
+        <h2 class="bg-sky-700 p-3 mb-4 text-center text-white">
+          Información <?= ($ancestro['ancestro'] === 'mamá' ? 'de la ' : 'del ') . $ancestro['ancestro'] ?>
+        </h2>
+        <div class="px-4">
+          <h3 class="mb-1 font-medium text-sky-700">Información personal:</h3>
+          <div class="mb-3 italic">
+            <p>
+              <span class="font-medium">Nombres:</span>
+              <?= $ancestro['nombres'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Apellidos:</span>
+              <?= $ancestro['apellidos'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Ultimo grado cursado:</span>
+              <?= $ancestro['ultimo_grado'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Ocupación:</span>
+              <?= $ancestro['ocupacion'] ?>
+            </p>
+          </div>
+
+          <h3 class="mb-1 font-medium text-sky-700">Información de documento:</h3>
+          <div class="mb-3 italic">
+            <p>
+              <span class="font-medium">Número de documento:</span>
+              <?= $ancestro['documento'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Tipo de documento:</span>
+              <?= $ancestro['documento_tipo'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Fecha de expedición:</span>
+              <?= $ancestro['documento_fecha_expedicion'] ?>
+            </p>
+            <p>
+              <span class="font-medium">Lugar de expedición:</span>
+              <?= $ancestro['documento_lugar_expedicion'] ?>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    <?php endwhile ?>
+
+    <!-- Información de ubicación -->
+    <?php
+    $ubicacionInfo = mysqli_fetch_array(mysqli_query(connection(), "
+      SELECT ub.*  
+      FROM matricula_ubicacion ub
+      JOIN matriculas m ON m.id = ub.matricula_id
+      WHERE m.id = $matriculaId;
+    "));
+    ?>
+    <section class="mb-4">
+      <h2 class="bg-sky-700 p-3 mb-4 text-center text-white">Información de ubicación</h2>
+      <div class="px-4">
+        <h3 class="mb-1 font-medium text-sky-700">Información de ubicación:</h3>
+        <div class="mb-3 italic">
+          <p>
+            <span class="font-medium">Dirección:</span>
+            <?= $ubicacionInfo['direccion'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Número de telefono fijo:</span>
+            <?= $ubicacionInfo['telefono'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Número telefonico:</span>
+            <?= $ubicacionInfo['numero_telefonico'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Estrato:</span>
+            <?= $ubicacionInfo['estrato'] ?>
+          </p>
+        </div>
+
+        <h3 class="mb-1 font-medium text-sky-700">Información de estudiante:</h3>
+        <div class="mb-3 italic">
+          <p>
+            <span class="font-medium">Tiene sisben:</span>
+            <?= $ubicacionInfo['sisben'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Tiene EPS:</span>
+            <?= $ubicacionInfo['eps'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Tipo de sangre:</span>
+            <?= $ubicacionInfo['tipo_sangre'] ?>
+          </p>
+          <p>
+            <span class="font-medium">Victima de conflicto armado o desplazamiento:</span>
+            <?= $ubicacionInfo['victima'] ?>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información de vivienda -->
+    <?php
+    $viviendaInfo = mysqli_fetch_array(mysqli_query(connection(), "
+      SELECT v.*  
+      FROM matricula_vivienda v
+      JOIN matriculas m ON m.id = v.matricula_id
+      WHERE m.id = $matriculaId;
+    "));
+    ?>
+    <section class="mb-4">
+      <h2 class="bg-sky-700 p-3 mb-4 text-center text-white">Información de la vivienda</h2>
+      <div class="px-4">
+        <h3 class="mb-1 font-medium text-sky-700">Información de vivienda:</h3>
+        <div class="mb-3 italic">
+          <p>
+            <span class="font-medium">Tipo de vivienda:</span>
+            <?= $viviendaInfo['tipo_vivienda'] ?>
+          </p>
+          <p>
+            <span class="font-medium">La vivienda es:</span>
+            <?= $viviendaInfo['vivienda'] ?>
+          </p>
+          <p>
+            <span class="font-medium">número de personas que vivén en la vivienda:</span>
+            <?= $viviendaInfo['personas'] ?>
           </p>
         </div>
       </div>
