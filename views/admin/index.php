@@ -54,7 +54,13 @@ $users = mysqli_query(connection(), "
       <section class="border border-gray-500 h-96 rounded px-4 py-8 overflow-y-auto">
         <?php while($user = mysqli_fetch_array($users)): ?>
           <article class="rounded bg-sky-500 mb-4">
-            <h3><a href="" class="text-white block p-2"><?= $user['name'] ?></a></h3>
+            <h3>
+              <a href=<?= "./usuario_matriculas.php?user=$user[id]&name=$user[name]"  ?>
+                class="text-white block p-2"
+              >
+                <?= $user['name'] ?>
+              </a>
+            </h3>
           </article>
         <?php 
         endwhile;
