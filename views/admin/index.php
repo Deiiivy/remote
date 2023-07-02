@@ -38,7 +38,7 @@ $users = mysqli_query(connection(), "
             </a>
           </li>
           <li class="mx-4">
-            <a class="text-white hover:text-sky-500" href="">
+            <a class="text-white hover:text-sky-500" href="./matriculas.php">
               Matriculas
             </a>
           </li>
@@ -52,11 +52,14 @@ $users = mysqli_query(connection(), "
     <div class="w-1/3 mx-auto">
       <h2 class="text-2xl font-bold mb-4 text-center">Lista de usuarios:</h2>
       <section class="border border-gray-500 h-96 rounded px-4 py-8 overflow-y-auto">
-        <?php foreach($users as $user): ?>
-          <article class="p-2 rounded bg-sky-500 mb-4">
-            <h3><a href="" class="text-white"><?= $user['name'] ?></a></h3>
+        <?php while($user = mysqli_fetch_array($users)): ?>
+          <article class="rounded bg-sky-500 mb-4">
+            <h3><a href="" class="text-white block p-2"><?= $user['name'] ?></a></h3>
           </article>
-        <?php endforeach ?>
+        <?php 
+        endwhile;
+        mysqli_close(connection());
+        ?>
       </section>
     </div>
   </div>
