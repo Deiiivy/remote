@@ -4,7 +4,7 @@
     <input name="estudiante_p_apellido" class="border border-black mb-3" type="text" placeholder="Primer Apellido" required>
     <input name="estudiante_s_apellido" class="border border-black mb-3" type="text" placeholder="Segundo Apellido" required>
     <input name="estudiante_p_nombre" class="border border-black mb-3" type="text" placeholder="Primer Nombre" required>
-    <input name="estudiante_s_nombre" class="border border-black mb-3" type="text" placeholder="Segundo Nombre" required>
+    <input name="estudiante_s_nombre" class="border border-black mb-3" type="text" placeholder="Segundo Nombre" >
     <label class="mb-3" for="grade_level">Grado a cursar</label>
     <select name="estudiante_grado" name="grado" class="border border-black mb-3">
       <?php foreach($values as $value): ?>

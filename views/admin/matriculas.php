@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once(str_replace('/views/admin', '/database.php', __DIR__));
+require_once(str_replace('\views\admin', '\database.php', __DIR__));
 
 error_reporting(0);
 ini_set('display_errors', 0);

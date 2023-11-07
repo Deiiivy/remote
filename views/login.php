@@ -1,6 +1,6 @@
 <?php
+require_once(str_replace('\views', '\database.php', __DIR__));
 session_start();
-require_once(str_replace('/views', '/database.php', __DIR__));
 
 error_reporting(0);
 ini_set('display_errors', 0);
@@ -58,19 +58,20 @@ if ($_POST) {
 </head>
 
 <body>
-  <header class="bg-black py-1">
+  <header class="bg-black/30 py-6">
     <nav>
       <ul class="flex justify-center">
         <li><a class="text-white hover:text-sky-500" href="#">INGRESAR</a></li>
-        <li><a class="text-sky-500 mx-8 hover:text-white" href="../">INICIO</a></li>
+        <li><a class="text-white mx-8 hover:text-sky-500" href="../">INICIO</a></li>
         <li><a class="text-white hover:text-sky-500" href="./register.php">REGISTRARSE</a></li>
       </ul>
     </nav>
   </header>
-  <div class="w-11/12 mx-auto mt-12">
+  <div class="h-screen bg-gradient-to-l from-blue-400/50 to-slate-900/50">
+
     <h1 class="text-4xl font-bold text-center mb-8">Iniciar Sesión</h1>
     <div class="flex justify-center">
-      <form class="border-2 border-gray-600 rounded p-4 w-1/3 flex flex-col" action="#" method="post">
+      <form class="border-2 border-gray-600 rounded p-4 w-1/3 flex flex-col bg-white" action="#" method="post">
         <?php if ($invalidData) : ?>
           <h6 class="text-red-500">Datos invalidos.</h6>
         <?php endif ?>
@@ -92,6 +93,25 @@ if ($_POST) {
       </form>
     </div>
   </div>
+  </div>
 </body>
+<style>
+    body{
+    background-image: url("../assets/colegio.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+    form label {
+      color:black;
+    }
+
+    ul{
+    letter-spacing: 12px;
+  }
+
+  
+  </style>
 
 </html>

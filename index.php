@@ -11,11 +11,11 @@
 </head>
 
 <body class="h-screen bg-[url('./assets/colegio.jpg')] bg-no-repeat bg-cover">
-  <header class="bg-black py-1">
+  <header  class="barra">
     <nav>
       <ul class="flex justify-center">
         <li><a class="text-white hover:text-sky-500" href="./views/login.php">INGRESAR</a></li>
-        <li><a class="text-sky-500 mx-8 hover:text-white" href="#">INICIO</a></li>
+        <li><a class="text-white mx-8 hover:text-sky-500" href="#" >INICIO</a></li>
         <li><a class="text-white hover:text-sky-500" href="./views/register.php">REGISTRARSE</a></li>
       </ul>
     </nav>
@@ -25,7 +25,7 @@
       <img class="w-40 mb-8" src="./assets/logo.png" alt="logo">
       <h1 class="tracking-wide text-center text-4xl font-bold text-white mb-8">LA INDEPENDENCIA</h1>
       <p class="text-white text-center w-1/2 italic mb-10"">
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos maxime"
+        "Saber mas, para ser mejor"
       </p>
       <a href="./views/login.php" class="bg-sky-600 text-white px-4 py-2 hover:bg-sky-500 rounded">
         Matricular Ahora
@@ -33,5 +33,11 @@
     </div>
   </div>
 </body>
-
+<style>
+  .barra{
+    letter-spacing: 12px;
+    background-color: rgba(0, 0, 0, 0.349);
+    padding: 20px;
+  }
+</style>
 </html>

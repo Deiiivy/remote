@@ -322,5 +322,5 @@ if ($_POST) {
 
   // echo "Información carrera escolar";
 
-  header('location:./?message='. urldecode('Matricula creada correctamente'));
+  header('location:./');
 }
